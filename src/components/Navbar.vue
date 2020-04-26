@@ -3,7 +3,7 @@
       <div class="container">
           <div class="navbar__content d-flex justify-content-between align-items-center">
               <div class="logo pt-2">
-                  <router-link to="/"><h4><i class="fa fa-cubes"></i>&nbsp; Fidelity Income</h4></router-link>
+                  <router-link to="/" class="logo"><h4><i class="fa fa-cubes"></i>&nbsp; Fidelity Income</h4></router-link>
               </div>
               <div class="menu">
                   <ul class="d-flex justify-content-between pt-3">
@@ -80,9 +80,10 @@ export default {
     padding: 1rem 0;
     .navbar__content{
         .logo{
-            .logo__img{
-                max-width: 50px;
-                height: auto;
+            text-decoration: none;
+           .logo h4 {
+                color: $primary-color;
+                font-weight: bold;
             }
         }
         .menu{
