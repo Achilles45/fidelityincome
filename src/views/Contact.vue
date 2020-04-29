@@ -26,7 +26,7 @@
                         <div class="icon__wrapper">
                             <p><i class="fa fa-phone"></i></p>
                         </div>
-                        <p class="pl-3">+2348103515205, +2348103515205</p>
+                        <p class="pl-3">+2349022131450</p>
                     </div>
                   </div>
                    <div class="col-md-4">
@@ -34,7 +34,7 @@
                      <div class="icon__wrapper">
                             <p><i class="fa fa-home"></i></p>
                      </div>
-                        <p class="pl-3">1 Villa Road, Abuja, Nigeria.</p>
+                        <p class="pl-3">10 College Junction, Makurdi, Benue State, Nigeria</p>
                     </div>
                   </div>
               </div>

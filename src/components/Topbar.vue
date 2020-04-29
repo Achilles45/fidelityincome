@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
             <div class="col-md-5">
-                 <i class="fa fa-phone"></i>&nbsp;&nbsp; +2348103515205, &nbsp; +2348103515205 &nbsp;  (Mon - Fri, 9am to 4pm)
+                 <i class="fa fa-phone"></i>&nbsp;&nbsp; +2349022131450 &nbsp;  (Mon - Fri, 9am to 4pm)
             </div>
             <div class="col-md-3">
                  <i class="fa fa-envelope"></i>&nbsp;&nbsp; support@fidelityincome.com
