@@ -7,6 +7,7 @@ import Signin from '../views/Signin.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
 import Withdrawal from '../views/Withdrawal.vue'
+import PaymentDetails from '../views/PaymentDetails.vue'
 import firebase from 'firebase'
 Vue.use(VueRouter)
 
@@ -41,6 +42,11 @@ Vue.use(VueRouter)
         path: '/signin',
         name: 'Signin',
         component: Signin
+      },
+      {
+        path: '/payment-details',
+        name: 'PaymentDetails',
+        component: PaymentDetails
       },
       {
         path: '/dashboard/overview',

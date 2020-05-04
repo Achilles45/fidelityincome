@@ -128,7 +128,7 @@ methods:{
                 plan:this.plan,
                 user_id:cred.user.uid
              })
-              this.$router.push({name: 'dashboard'})
+              this.$router.push({name: 'PaymentDetails'})
               console.log('Registration was successful')
             })
             .catch(err=>{

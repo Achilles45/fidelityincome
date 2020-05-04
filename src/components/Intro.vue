@@ -8,25 +8,26 @@
                   <router-link to="/about" class="about__link">Learn more <i class="fas fa-long-arrow-alt-right 7x"></i></router-link>
               </div>
               <div class="col-md-1"></div>
-              <div class="col-md-7">
-                  <div class="card__wrapper">
-                      <div class="card__content">
-                         <div class="boder__images">
-                              <img src="../assets/images/half-maze-gray.png" class="img" alt="">
-                         </div>
-                          <img src="../assets/images/chart.svg" class="icons" alt="">
-                          <h4>High Interest <br> Returns</h4>
-                          <p>Fidelity investment only present her customers with investment opportunities that are worth the risk and with high returns in all asset classes from FMCGs, real estate to cryptocurrencies.</p>
-                      </div>
-                       <div class="card__content">
-                           <div class="boder__images">
-                              <img src="../assets/images/half-maze-green.png" class="img" alt="">
-                         </div>
-                          <img src="../assets/images/lock.svg" class="icons" alt="">
-                          <h4>Strong <br> Security</h4>
-                          <p>The company uses the highest levels of Internet Security, and it is secured by 256 bits SSL security encryption to ensure that your information is completely protected from fraud.</p>
-                      </div>
-                  </div>
+              <div class="col-md-7 pt-5">
+                          <p>Fidelity income investment company is an investment platform whereby you generate 50% returns on investment added to your capital in 4 working days as a first timer. After getting paid on your first investment, if you invest for the second time as an old member,you will be paid in 7 working days.
+                        Note: Recommitment is 100% of your investment.<br />
+                        We have promo package plan for every new members that invested the promo package minimum is 100k  to get 300k why the maximum is 1m to cash out 3m within 24hours.....</p>
+                        
+                        <p>How we make it happen</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                      <p><i class="fa fa-check-square"></i> Natural honey production</p>
+                                        <p><i class="fa fa-check-square"></i> Bitcoin mining & selling of gold </p>
+                                        <p><i class="fa fa-check-square"></i> Import & Export of Agro Allied Products</p>
+                                        <p><i class="fa fa-check-square"></i> Foodstuffs exportation</p>
+                            </div>
+                            <div class="col-md-6">
+                        <p><i class="fa fa-check-square"></i> Power generation</p>
+                        <p><i class="fa fa-check-square"></i> Upstream petroleum services.</p>
+                        <p><i class="fa fa-check-square"></i> Lend money to the cooperative.</p>
+                            </div>
+                        </div>
               </div>
           </div>
       </div>
