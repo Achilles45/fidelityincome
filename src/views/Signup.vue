@@ -1,142 +1,171 @@
 <template>
   <div class="signup">
-      <!-- <Navbar /> -->
-      <div class="form__wrapper">
-         <div class="text">
-              <!-- <div class="logo pb-4">
-               <router-link to="/" class="logo"><img src="../assets/images/logo.png" class="logo-img" alt=""></router-link>
-               <hr>
-           </div> -->
-              <h3>Create a free Account</h3>
-          <p>It's very simple and fast to complete</p>
-         </div>
-          <form @submit.prevent="register()">
+        <div class="form__wrapper">
+           <h4 class="text-center">MEMBER REGISTRATION</h4>
+           <P class="text-center">It is simple and can be completed in a minute!</P>
+           <hr>
+           <form @submit.prevent="signup()">
               <div class="row">
                   <div class="col-md-6">
-                      <div class="form-group">
-                           <label for="">First Name *</label>
-                          <input type="text" class="form-control" placeholder="First Name" v-model="first_name">
-                      </div>
+                       <div class="form-group">
+                   <input type="text" class="form-control" placeholder="Username" v-model="name">
+               </div>
                   </div>
                   <div class="col-md-6">
-                      <div class="form-group">
-                           <label for="">Last Name *</label>
-                          <input type="text" class="form-control" placeholder="Last Name" v-model="last_name">
-                      </div>
+                       <div class="form-group">
+                   <input type="email" class="form-control" placeholder="Enter your email address" v-model="email">
+               </div>
                   </div>
               </div>
-                <div class="row">
-                  <div class="col-md-6">
-                      <div class="form-group">
-                           <label for="">Email Address *</label>
-                          <input type="email" class="form-control" placeholder="example@gmail.com" v-model="email">
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="form-group">
-                           <label for="">Phone Number *</label>
-                          <input type="tel" class="form-control" placeholder="Phone Number" v-model="phone">
-                      </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="">Select your investment plan *</label>
-                  <select class="form-control" id="inlineFormCustomSelect" v-model="plan">
-                             <option selected>Select Investment Plan</option>
-                            <option value="20,000"> &#8358;20,000 to &#8358;32,000</option>
-                            <option value="30,000">&#8358;30,000 to &#8358;48,000</option>
-                            <option value="40,000">&#8358;40,000 to &#8358;64,000</option>
-                            <option value="50,000">&#8358;50,000 to &#8358;80,000</option>
-                            <option value="60,000"> &#8358;60,000 to &#8358;96,000</option>
-                            <option value="70,000">&#8358;70,000 to &#8358;112,000</option>
-                            <option value="80,000"> &#8358;80,000 to &#8358;128,000</option>
-                            <option value="90,000">&#8358;90,000 to &#8358;144,000</option>
-                            <option value="100,000"> &#8358;100,000 to &#8358;160,000</option>
-                            <option value="200,000"> &#8358;200,000 to &#8358;300,000</option>
-                            <option value="300,000"> &#8358;300,000 to &#8358;450,000</option>
-                            <option value="400,000"> &#8358;400,000 to &#8358;600,000</option>
-                            <option value="500,000"> &#8358;500,000 to &#8358;750,000</option>
-                            <option value="200,000"> &#8358;200,000 to &#8358;600,000 (Promo package)</option>
-                            <option value="300,000"> &#8358;300,000 to &#8358;900,000 (Promo package)</option>
-                            <option value="400,000"> &#8358;400,000 to &#8358;1,200,000 (Promo package)</option>
-                            <option value="500,000"> &#8358;500,000 to &#8358;1,500,000 (Jackpot package)</option>
-                            <option value="600,000"> &#8358;600,000 to &#8358;1,800,000 (Jackpot package)</option>
-                            <option value="700,000"> &#8358;700,000 to &#8358;2,100,000 (Jackpot package)</option>
-                            <option value="800,000"> &#8358;800,000 to &#8358;2,400,000 (Jackpot package)</option>
-                            <option value="900,000"> &#8358;900,000 to &#8358;2,700,000 (Jackpot package)</option>
-                            <option value="1,000,000"> &#8358;900,000 to &#8358;3,000,000 (Jackpot package)</option>
-                     
-                       
+                <div class="form-group">
+                   <input type="tel" class="form-control" placeholder="Phone Number" v-model="phone">
+               </div>
+               <div class="form-group">
+                      <small id="passwordHelpBlock" class="form-text text-muted">Select your account type</small>
+                  <select class="form-control" id="inlineFormCustomSelect" v-model="account_type">
+                            <option selected>Select Investment Plan</option>
+                            <option value="20,000">&#8358;20,000 to &#8358;30,000</option>
+                            <option value="30,000">&#8358;30,000 to &#8358;45,000</option>
+                            <option value="40,000">&#8358;40,000 to &#8358;60,000</option>
+                            <option value="50,000">&#8358;50,000 to &#8358;75,000</option>
+                            <option value="60,000">&#8358;60,000 to &#8358;90,000</option>
+                            <option value="70,000">&#8358;70,000 to &#8358;105,000</option>
+                            <option value="80,000">&#8358;80,000 to &#8358;120,000</option>
+                            <option value="90,000">&#8358;90,000 to &#8358;135,000</option>
+                            <option value="100,000">&#8358;100,000 to &#8358;150,000</option>
+                            <option value="200,000">&#8358;200,000 to &#8358;300,000</option>
+                            <option value="300,000">&#8358;300,000 to &#8358;450,000</option> 
+                            <option value="400,000">&#8358;400,000 to &#8358;600,000</option> 
+                            <option value="500,000">&#8358;500,000 to &#8358;750,000</option> 
+                            <option value="600,000">&#8358;600,000 to &#8358;900,000</option> 
+                            <!-- <option value="700,000">&#8358;700,000 to &#8358;1,000,050</option> 
+                            <option value="800,000">&#8358;800,000 to &#8358;1,200,000</option>  -->
+                             <option value="100,000">&#8358;100,000 to &#8358;300,000 (Promo plan)</option>
+                            <option value="200,000">&#8358;200,000 to &#8358;600,000 (Promo plan)</option>
+                            <option value="250,000">&#8358;300,000 to &#8358;900,000 (Promo plan)</option>
+                            <option value="300,000">&#8358;300,000 to &#8358;650,000 (Promo plan)</option>
+                            <option value="400,000">&#8358;400,000 to &#8358;1,200,000 (Promo plan)</option>
+                            <option value="500,000">&#8358;500,000 to &#8358;1,500,000 (Gold plan)</option>
+                            <option value="600,000">&#8358;600,000 to &#8358;1,800,000 (Promo plan)</option>
+                            <option value="700,000">&#8358;700,000 to &#8358;2,100,000 (Promo plan)</option>
+                            <option value="800,000">&#8358;800,000 to &#8358;2,400,000 (Promo plan)</option>
+                            <option value="900,000">&#8358;900,000 to &#8358;2,700,000 (Promo plan)</option>
+                            <option value="900,000">&#8358;1,000,000 to &#8358;3,000,000 (Promo plan)</option>
                          </select>
-              </div>
-              <div class="row">
-                  <div class="col-md-6">
-                       <label for="">Password</label>
-                      <input type="password" class="form-control" placeholder="Password" v-model="password">
-                  </div>
-                   <div class="col-md-6">
-                       <label for="">Repeat Password</label>
-                      <input type="password" class="form-control" placeholder="Repeat Password" v-model="repeat_password">
-                  </div>
-              </div><br>
-              <small>By clicking the create account button, you agree to our terms and conditions</small><br><br>
-              <div v-if="err" class="alert alert-danger">
-                  {{ err }}
-              </div>
-              <button type="submit" class="account__btn">Create Account</button>
-              <div class="bottom__text text-center">
-                  <p>Already have an account? <router-link to="/signin" class="login_link">Login</router-link></p>
-              </div>
-          </form>
-      </div>
+               </div>
+               <div class="form-group">
+                    <small id="passwordHelpBlock" class="form-text text-muted">Select your Bank</small>
+                   <select class="form-control " id="bank" v-model="user_bank">
+<option selected>Choose</option>
+<option value="access">Access Bank</option>
+          <option value="Citibank">Citibank</option>
+          <option value="Diamond">Diamond Bank</option>
+          <option value="Ecobank">Ecobank</option>
+          <option value="Fidelity">Fidelity Bank</option>
+          <option value="Firstbank">First Bank</option>
+          <option value="Fcmb">First City Monument Bank (FCMB)</option>
+          <option value="Gtb">Guaranty Trust Bank (GTB)</option>
+          <option value="Heritage">Heritage Bank</option>
+          <option value="Keystone">Keystone Bank</option>
+          <option value="Polaris">Polaris Bank</option>
+          <option value="Providus">Providus Bank</option>
+          <option value="Stanbic">Stanbic IBTC Bank</option>
+          <option value="Standard">Standard Chartered Bank</option>
+          <option value="Sterling">Sterling Bank</option>
+          <option value="Suntrust">Suntrust Bank</option>
+          <option value="Union">Union Bank</option>
+          <option value="Uba">United Bank for Africa (UBA)</option>
+          <option value="Unity">Unity Bank</option>
+          <option value="Wema">Wema Bank</option>
+          <option value="Zenith">Zenith Bank</option>
+</select>
+               </div>
+               <div class="form-group">
+                   <input type="text" class="form-control" placeholder="Account Number" v-model="user_account_number">
+               </div>
+               <div class="form-group">
+                   <input type="text" class="form-control" placeholder="Account Name" v-model="user_bank_name">
+               </div>
+               <div class="form-group">
+                   <input type="password" class="form-control" placeholder="Enter Password" v-model="password">
+               </div>
+                <div class="form-group">
+                   <input type="password" class="form-control" placeholder="Repeat Password" v-model="repeat_password">
+               </div>
+                 <div v-if="err" class="alert alert-danger animated slideInRight">
+                   {{ err }}
+               </div>
+                <div v-if="loading" class="loading text-center">
+                              <img src="../assets/images/loader.gif" class="loader" alt="">
+                          </div>
+               <button type="submit" class="signup__btn">Create Account</button>
+               <div class="bottom text-center pt-4">
+                   <p>Have an account already? <router-link to="/signin">Sign In</router-link></p>
+               </div>
+           </form>
+        </div>
   </div>
 </template>
 
 <script>
-// import Navbar from '@/components/Navbar.vue';
-import db from '@/firebase/init'
 import firebase from 'firebase'
+import db from '@/firebase/init'
 export default {
-data(){
-    return{
-        first_name:null,
-        last_name: null,
-        email:null,
-        phone:null,
-        plan:null,
-        password:null,
-        repeat_password:null,
-        err:null
-    }
-},
-methods:{
-    register(){
-        //Check if the form has been filled
-        if(!this.first_name || !this.last_name || !this.email || !this.phone || !this.plan || !this.password || !this.repeat_password){
-            this.err = 'Error. Please fill out the form first'
-        }else if(this.password != this.repeat_password){
-            this.err = 'Error. Your passwords do not match'
-        }else{
-            //Sign up the user and create a record for the user in firestore
-            firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-            .then(cred=>{
-             db.collection('users').add({
-                first_name:this.first_name,
-                last_name:this.last_name,
-                phone:this.phone,
-                email:this.email,
-                plan:this.plan,
-                user_id:cred.user.uid
-             })
-              this.$router.push({name: 'PaymentDetails'})
-              console.log('Registration was successful')
-            })
-            .catch(err=>{
-                this.err = err.message
-            })
+    data(){
+        return{
+            name: null,
+            email: null,
+            phone: null, 
+            account_type:null,
+            password: null,
+            repeat_password: null,
+            err: null,
+            loading:false,
+            available_balance:null,
+            verifified: 'false',
+            user_bank:null,
+            user_account_number:null,
+            user_bank_name:null
         }
-    }
-}
+    },
+    methods:{
+        signup(){
+            this.loading = true
+            //Check if the user has filled out all the required details
+            if(!this.name || !this.email || !this.phone || !this.account_type || !this.user_bank || !this.user_account_number || !this.user_bank_name || !this.password || !this.repeat_password){
+                this.loading = false
+                this.err = 'Registration failed. Please fill out the form and try again!'
+            }else if (this.password != this.repeat_password){
+                //Check to see if the passwords are same
+                this.loading = false
+                this.err = 'Oops! Your password did not match'
+            }else{
+                //Signup the user
+                this.loading = false
+                firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                .then((cred)=>{
+                     db.collection('users').add({
+                        name:this.name,
+                        phone:this.phone,
+                        email:this.email,
+                        account_type:this.account_type,
+                        user_id:cred.user.uid,
+                        available_balance:'0',
+                        verifyuser:'false',
+                        bank_name: '',
+                        account_number:'',
+                        account_name:'',
+                        wallet_address:'',
+                        user_bank:this.user_bank,
+                        user_bank_name:this.user_bank_name,
+                        user_account_number:this.user_account_number
+
+                })
+                this.$router.push({name: 'dashboard'})
+                })
+            }
+        }
+    },
 }
 </script>
 
@@ -150,60 +179,46 @@ methods:{
     align-items: center;
     .form__wrapper{
         background: #fff;
-        max-width: 550px;
-        margin:  3rem 1rem;
-        padding: 3rem 2rem;
         border-radius: 4px;
-        .text{
-            padding-bottom: 2rem;
-            h3{
+        padding: 2rem;
+        margin: 4rem 1rem;
+         width: 500px;
+         max-width: 100%;
+         h4{
                 font-weight: bold;
+                color: #2b2b2b;
+                padding-top: 1rem;
             }
             p{
+                padding-bottom: 1rem;
                 color: #627081;
-                font-size: .9rem;
             }
-        }
         form{
-            label{
-                color: #627081;
-                font-weight: bold;
-                font-size: .8rem;
-            }
             input, select{
-                height: 3rem;
-                box-shadow: none;
-                &::placeholder{
-                    font-size: .9rem;
-                }
-            }
-            small{
-                color: #627081;
-                font-weight: bold;
-                padding: .5rem 0;
-                opacity: .8;
-            }
-            .account__btn{
-                background: $primary-color;
-                border: none;
                 height: 3.2rem;
-                border-radius: 3px;
-                color:#fff;
-                width: 100%;
-                font-size: .9rem;
-            }
-            .bottom__text{
-                padding-top: 1rem;
-                p{
+                border-radius: 0px;
+                box-shadow: none;
+                // border:1px solid #000;
+                &::placeholder{
+                    text-transform: uppercase;
+                    font-size: .7rem;
                     color: #627081;
-                    font-size: .9rem;
-                    font-weight: 400;
-                    opacity: .8;
                 }
-               a{
-                   color: $primary-color;
-                   font-weight: bolder;
-               }
+                 .small{
+                color: #000 !important;
+                font-weight: bold !important;
+            }
+            }
+             .loader{
+                // max-width: 250px;
+                height: 100px;
+            }
+            .signup__btn{
+                background: $primary-color;
+                color: #fff;
+                padding: .8rem 2rem;
+                border: 1px solid $primary-color;
+                width: 100%;
             }
         }
     }

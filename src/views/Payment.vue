@@ -12,19 +12,29 @@
             <ul>
                <li><router-link to="/dashboard/overview"><i class="fa fa-cubes icons"></i>&nbsp;&nbsp; Overview</router-link></li><hr> 
                 <li><router-link to="/dashboard/profile"><i class="fa fa-users icons"></i>&nbsp;&nbsp; Profile</router-link></li><hr>
-                    <li><router-link to="/dashboard/payment"><i class="fa fa-credit-card icons"></i>&nbsp;&nbsp; Deposit</router-link></li><hr> 
+                 <li><router-link to="/dashboard/payment"><i class="fa fa-credit-card icons"></i>&nbsp;&nbsp; Deposit</router-link></li><hr> 
                  <li><router-link to="/dashboard/withdrawal"><i class="fa fa-clone icons"></i>&nbsp;&nbsp; Make Withdrawal</router-link></li><hr> 
                <li @click="logOut()" class="logout"><i class="fa fa-database icons"></i>&nbsp;&nbsp; Logout</li><hr>
             </ul>
             <br><br><br><br>
            </div>
-           <div class="dashboard__right ">
-              <div class="heading d-flex justify-content-between">
+           <div class="dashboard__right">
+               <div class="dashoard__heading d-none d-md-block">
+                 <div class="heading__content d-flex justify-content-between">
+                      <div class="toggler">
+                      <i class="fa fa-bars"></i>
+                  </div>
+                  <div class="email__holder">
+                      <h6>{{email}}</h6>
+                  </div>
+                 </div>
+               </div>
+              <div class="right__wrapper">
+                  <div class="heading d-flex justify-content-between">
                   <div class="content">
-                      <h4>You are logged as </h4>
-                      <h2>{{ name }}</h2>
-                      <!-- <small>{{ firstCode }}</small> -->
-                  <!-- <small>{{ accountNumber }}</small> -->
+                   <!-- <h5>Welcome Back!</h5> -->
+                    <h5>Make Payment</h5>
+                         <h4>{{ name }}</h4>
                   </div>
                     <div @click.prevent="show()" class="navbar__toggler">
                       <i class="fa fa-bars"></i>
@@ -32,57 +42,53 @@
                   <hr>
               </div>
               <div id="dashboard">
-             <small>You can now make request to make withdrawal into your local bank when your investment has reached maturity</small>
+             <small>You can make your deposit with any of the following methods immediately.</small>
              <hr>
               <div v-if="verifyuser == 'false'" class="red">
-                  You can't make withdrawals because your account or payment has not been verified. Please contact admin or call <a href="tel:09054205697">09054205697</a>
+                  Your account has not been verified. Please make your payment for verification or call &nbsp; <a href="tel:09022131450">09022131450</a>
+              </div><br>
+               <div>
+                  <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/tickers/?locale=en#%7B%22symbols%22%3A%5B%7B%22title%22%3A%22EUR%2FUSD%22%2C%22proName%22%3A%22FX_IDC%3AEURUSD%22%7D%2C%7B%22description%22%3A%22GBP%2FUSD%22%2C%22proName%22%3A%22FX%3AGBPUSD%22%7D%2C%7B%22description%22%3A%22USD%2FJPY%22%2C%22proName%22%3A%22FX%3AUSDJPY%22%7D%2C%7B%22description%22%3A%22NZD%2FUSD%22%2C%22proName%22%3A%22FX%3ANZDUSD%22%7D%2C%7B%22description%22%3A%22AUD%2FUSD%22%2C%22proName%22%3A%22FX%3AAUDUSD%22%7D%5D%2C%22width%22%3A%22100%25%22%2C%22height%22%3A72%2C%22utm_source%22%3A%22cryptomorefx.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22tickers%22%7D" style="box-sizing: border-box; height: 72px; width: 100%;"></iframe>
               </div>
-               <div class="row">
-                   <div class="col-md-8">
-                        <form @submit.prevent="withdraw()">
-                    <div class="form-group">
-                        <input type="text" class="form-control" disabled  v-bind:value="id">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="bank_name">Your Bank</label>
-                               <input type="text" class="form-control" disabled v-bind:value="user_bank">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="account">Your Account Number</label>
-                                <input type="text" class="form-control" disabled v-bind:value="user_account_number">
-                            </div>
-                        </div>
-                    </div>
-                     <div class="form-group">
-                        <label for="account">Your Account Name</label>
-                        <input type="text" class="form-control" disabled v-bind:value="user_bank_name">
-                            </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="date" class="form-control" placeholder="When do you want the transfer" v-model="date">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control"  v-bind="amount" placeholder="Amount to withdraw">
-                        </div>
-                        </div>
-                    </div><div v-if="err" class="alert alert-danger animated slideInRight">
-                                {{ err }}
-                            </div>
-                            <div v-if="success" class="alert alert-success">
-                                {{ success }}
-                            </div>
-                    <button type="submit" class="withraw_btn">Transfer Now</button>
-                </form>
-                   </div>
-               </div>
+              <div class="alert alert-success">
+                  Please, contact admin for payment details or call  <a href="tel:09022131450">09022131450</a>. Call same number after making payment for account verification!
               </div>
+                  <div class="summary__wrapper">
+                  <div class="summary__card two pt-4">
+                     <!-- <i class="fa fa-home"></i> -->
+                     <div class="content pl-4">
+                         <!-- <h6>Bank Accounts</h6> -->
+                         <h6>Bank Name: {{ bank_name}}</h6>
+                         <hr>
+                         <h6>Account Number:  {{ account_number }}</h6>
+                         <h6>Account Name:  {{ account_name }}</h6>
+                     </div>
+                  </div>
+                    <!-- <div class="summary__card three pt-4">
+                     <i class="fa fa-cubes"></i>
+                     <div class="content pl-4">
+                         <h6>Invetment Lifecycle</h6>
+                         <p>Your capital and returns would be paid back after a minimum of 4 days after your payment has been confirmed.</p>
+                     </div>
+                  </div> -->
+                  <div class="summary__card four pt-4">
+                     <!-- <i class="fa fa-home"></i> -->
+                     <div class="content pl-2">
+                         <!-- <h6>Bank Accounts</h6> -->
+                         <h6>Bitcoin Payment</h6>
+                         <hr>
+                         <h6>Wallet Address: {{ wallet_address }}</h6>
+                         <!-- <h6>Account Name:  Usuoyibo Achilles Ewomamena</h6> -->
+                     </div>
+                  </div>
+              </div>
+              </div>
+              <hr>
+              <div></div>
+              <!-- <p>After making paymen, please send a message to to customer care using the live chat or email to info@diamondinvestment.ltd so your payment can be immediately approved.</p> -->
+              </div>
+            <!--End of Dashboard
+            =========================-->
               <br>
            </div>
         </div>
@@ -94,60 +100,42 @@ import firebase from 'firebase'
 export default {
     data(){
         return{
-            id:null,
             email:null,
             name:null,
             plan:null,
-            verifyuser:null,
-            //Data for the withdrawal process
-            user_bank:null,
-            user_bank_name:null,
-            user_account_number:null,
-            date:null,
-            amount:null,
-            account_type:null,
-            err:null,
-            success:null,
-            investmentReturns:null
+            id:null,
+            bank_name: null,
+            account_number:null,
+            account_name:null,
+            wallet_address:null
         }
     },
     computed:{
-        verifyuser(){
-            return this.verifyuser = this.verifyuser
+        investmentReturns(){
+            return this.plan * 0.15
         }
     },
-    methods:{
+     methods:{
           show:function(){
             const navLeft = document.querySelector('#dashboard__left')
             navLeft.classList.toggle('navLeft')
         },
-        //Function for the user to logout
+        //Remove the left section of the dashbord
+        shiftLeft(){
+            const navLeft = document.querySelector('#dashboard__left')
+            const toggler = document.querySelector('.toggler');
+            toggler.addEventListener('click', ()=>{
+                navLeft.classList.remove()
+            })
+
+        },
+         //Function for the user to logout
         logOut:function(){
            firebase.auth().signOut()
            .then(()=>{
                this.$router.push({name: 'Signin'})
            })
         },
-        //Function for the withdrawal process here
-        withdraw(){
-           // Check if the user has filled the form
-           if(!this.user_bank || !this.user_bank_name ||!this.user_account_number|| !this.amount || !this.date){
-               this.err = 'Please completely fill the form and try again'
-               this.removeAlert()
-           }else if(this.amount > this.investmentReturns){
-               this.err = 'Transaction failed. You do not have sufficient balance in your wallet';
-           }else if(this.verifyuser == 'false'){
-               this.err = 'Withdrawal failed. Please contact admin for verification'
-           }
-           else{
-               this.success = 'Your withdrawal request was submitted successful. We will get back to you in 24 hours'
-           }
-        },
-         removeAlert(){
-        setTimeout(() => {
-            document.querySelector('.message').remove()
-        }, 5000);
-    }
     },
         mounted(){
         //Get current user that just logged in
@@ -158,12 +146,13 @@ export default {
             snapshot.forEach((doc) =>{
                 this.name = doc.data().name,
                 this.email = doc.data().email,
-                this.account_type = doc.data().account_type
+                this.plan = doc.data().plan,
+                this.id = doc.data().user_id
+                this.bank_name = doc.data().bank_name
+                this.account_number = doc.data().account_number
+                this.account_name = doc.data().account_name
+                this.wallet_address = doc.data().wallet_address
                 this.verifyuser = doc.data().verifyuser
-                this.id = doc.data().user_id,
-                this.user_bank = doc.data().user_bank,
-                this.user_bank_name = doc.data().user_bank_name,
-                this.user_account_number = doc.data().user_account_number
             })
         })
     }
@@ -177,7 +166,7 @@ export default {
     display: grid;
     grid-template-columns:  260px 1fr;
     // grid-gap: 30px;
-     .dashboard__left{
+    .dashboard__left{
         background: #252525;
         padding: 1rem 2rem;
         color:#fff;
@@ -191,10 +180,11 @@ export default {
             height: auto;
             margin-bottom: 2rem;
         }
+        
         h5{
             opacity: .8;
             font-size: 1.1rem;
-            padding-bottom: .5rem;
+            // padding-bottom: .5rem;
         }
         ul{
             li a, .logout{
@@ -212,29 +202,41 @@ export default {
         }
     }
     .dashboard__right{
-        background: #fafafa;
-        padding: 3rem 2.5rem;
+        background: #F4F6F9;
+        // padding: 3rem 2.5rem;
+        .right__wrapper{
+              padding: 1rem 2rem;
+        }
+        h4{
+           font-weight: 400;
+        }
        small{
             color:#627081;
            font-size: .8rem;
            font-weight: bold;
            opacity: .8;
        }
+       .dashoard__heading{
+           background-color: #FBAE1C;
+           padding: 1.2rem 2rem;
+           display: flex;
+           justify-content: space-between;
+       }
         .summary__wrapper{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-gap: 30px;
-            margin-top: 2rem;
+            margin-top: 1rem;
             .summary__card{
                 display: flex;
-                padding: 1.3rem 2rem;
+                padding: 1rem 1rem;
                 border-radius: 4px;
                 // font-size: .9rem;
                 color:#fff !important;
                 margin-bottom: 2rem;
                 p{
                     color:#fff !important;
-                    padding-top: .4rem;
+                    padding-top: 0rem;
                     opacity: .9;
                     font-size: .7rem;
                     line-height: 1.4rem;
@@ -245,32 +247,30 @@ export default {
                     font-size: 1rem;
                 }
             }
+            
             .one{
-                    background: #ff808b;
+                    background: #00C292;
                 }
                 .two{
                     background: #757afc;
                 }
                 .three{
-                    background: #0facf3;
+                    background: #EF5350;
                 }
                 .four{
                     background: #251F68;
+                   
                 }
+                
         }
+         p{
+                        color: red;
+                    }
             //REQUEST FORM
             form{
                  box-shadow: 0px 6px 60px -7px rgba(69,77,89,0.15);
                  padding: 2rem;
                  margin: 2rem 0;
-                  .err{
-                background: $secondary-color;
-                color: #fff;
-                border-radius: 3px;
-                padding:.9rem 1rem;
-                margin-bottom: 1rem;
-                font-size: .9rem;
-            }
                  h4{
                      font-weight: bold;
                      font-size: 1rem;
@@ -289,13 +289,13 @@ export default {
                      opacity: .7;
                  }
                  input, select{
-                     height: 3.5rem;
+                     height: 2.8rem;
                      box-shadow: none;
                      border-radius: 0px;
                      font-size: .9rem;
                  }
-                 .withraw_btn{
-                     background: $primary-color;
+                 .request__btn{
+                     background: #251F68;
                      color:#fff;
                      margin-top: 1.5rem;
                      border-radius: 3px;
@@ -339,6 +339,17 @@ export default {
     top: 0 !important;
 }
 
+ .red{
+            background: rgb(161, 39, 39);
+            color: #fff;
+            padding: 1rem .5rem;
+            border-radius: 3px;
+            font-size: .85rem;
+            opacity: .9;
+             a{
+                color:#fff !important;
+            }
+        }
 //MEDIA QUERIES FOR SMALLER SCREENS
 @media only screen and (max-width: 600px){
     .dashboard{
@@ -352,6 +363,9 @@ export default {
 .dashboard__right{
     width: 100vw !important;
     padding: 3rem 1.2rem !important;
+     .right__wrapper{
+              padding: 1rem .5rem !important;
+        }
 }
 .summary__wrapper{
     grid-gap: 5px !important;
@@ -364,22 +378,4 @@ export default {
     max-width: 150px;
     height: auto;
 }
-.withraw_btn{
-    background: $primary-color;
-    padding: 1rem 3rem;
-    border-radius: 3px;
-    border: none;
-    color: #FFF;
-}
- .red{
-            background: rgb(161, 39, 39);
-            color: #fff;
-            padding: 1rem .5rem;
-            border-radius: 3px;
-            font-size: .85rem;
-            opacity: .9;
-            a{
-                color:#fff !important;
-            }
-        }
 </style>
