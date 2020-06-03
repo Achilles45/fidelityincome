@@ -2,14 +2,14 @@ import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAFj_-OWAvWL9XxUskcsVYdIGFmYA0yE0I",
-  authDomain: "fidelity-income-fcd95.firebaseapp.com",
-  databaseURL: "https://fidelity-income-fcd95.firebaseio.com",
-  projectId: "fidelity-income-fcd95",
-  storageBucket: "fidelity-income-fcd95.appspot.com",
-  messagingSenderId: "214807404559",
-  appId: "1:214807404559:web:070b2fd636c1f747b4c37a",
-  measurementId: "G-4VN6LS9KHC"
+  apiKey: "AIzaSyBQnZO5-pVzE53TDEmI2YzeyUxNTqVLhUI",
+  authDomain: "fidelity-app-45696.firebaseapp.com",
+  databaseURL: "https://fidelity-app-45696.firebaseio.com",
+  projectId: "fidelity-app-45696",
+  storageBucket: "fidelity-app-45696.appspot.com",
+  messagingSenderId: "591798518235",
+  appId: "1:591798518235:web:68bbad6643ebc7acb1a7fe",
+  measurementId: "G-D15QJE4KMR"
 };
   // Initialize Firebase
   const firebaseApp = firebase.initializeApp(firebaseConfig);
