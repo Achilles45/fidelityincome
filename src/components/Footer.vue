@@ -55,7 +55,7 @@
                   <small>Fidelity Income Investment Company is your preferred company when it comes to making investment effortlessly. We crowdfund investments and put these money into diverse investment portfolios ranging from crypocurrencies and forex trading, agriculture, oil and gas, import and export and others, creting value for our investors and jobs in the country where we do business. Our legal partners are working on the new legal terms and conditions. Need clarification, send a message on the live chat provided here...</small><br>
               </div><br>
               <div class="col-12 text-center">
-                  <small class="copy">Copyright &copy;2020 All rights reserved. Nation Great Investment Company Limited</small>
+                  <small class="copy">Copyright &copy;2020 All rights reserved. Fidelity Income Investment Company Limited</small>
               </div>
           </div>
           </div>
