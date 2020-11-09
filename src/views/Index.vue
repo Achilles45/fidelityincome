@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <Topbar />
+    <Overlay />
+    <!-- <Topbar />
     <Navbar />
     <Herosection />
     <Intro />
     <Process />
     <Pricing />
     <Hero />
-    <Footer />
+    <Footer /> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Overlay from '@/components/Overlay.vue'
 import Topbar from '@/components/Topbar.vue'
 import Navbar from '@/components/Navbar.vue'
 import Herosection from '@/components/Herosection.vue'
@@ -24,6 +26,7 @@ import Footer from '@/components/Footer.vue'
 export default {
   name: 'Index',
   components:{
+    Overlay,
     Topbar,
     Navbar,
     Herosection,

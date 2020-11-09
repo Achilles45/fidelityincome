@@ -20,58 +20,58 @@ Vue.use(VueRouter)
         name: 'Index',
         component: Index
       },
-      {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-      },
-      {
-        path: '/signup',
-        name: 'Signup',
-        component: Signup
-      },
-      {
-        path: '/contact',
-        name: 'Contact',
-        component: Contact
-      },
-      {
-        path: '/signin',
-        name: 'Signin',
-        component: Signin
-      },
-      {
-        path: '/dashboard/payment',
-        name: 'Payment',
-        component: Payment
-      },
-      {
-        path: '/dashboard/overview',
-        name: 'dashboard',
-        component: Dashboard,
-        meta:{
-          requiresAuth: true
-        }
-      },
-      {
-        path: '/dashboard/profile',
-        name: 'profile',
-        component: Profile,
-        meta:{
-          requiresAuth: true
-        }
-      },
-      {
-        path: '/dashboard/withdrawal',
-        name: 'withdrawal',
-        component: Withdrawal,
-        meta:{
-          requiresAuth: true
-        }
-      },
+      // {
+      //   path: '/about',
+      //   name: 'About',
+      //   // route level code-splitting
+      //   // this generates a separate chunk (about.[hash].js) for this route
+      //   // which is lazy-loaded when the route is visited.
+      //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+      // },
+      // {
+      //   path: '/signup',
+      //   name: 'Signup',
+      //   component: Signup
+      // },
+      // {
+      //   path: '/contact',
+      //   name: 'Contact',
+      //   component: Contact
+      // },
+      // {
+      //   path: '/signin',
+      //   name: 'Signin',
+      //   component: Signin
+      // },
+      // {
+      //   path: '/dashboard/payment',
+      //   name: 'Payment',
+      //   component: Payment
+      // },
+      // {
+      //   path: '/dashboard/overview',
+      //   name: 'dashboard',
+      //   component: Dashboard,
+      //   meta:{
+      //     requiresAuth: true
+      //   }
+      // },
+      // {
+      //   path: '/dashboard/profile',
+      //   name: 'profile',
+      //   component: Profile,
+      //   meta:{
+      //     requiresAuth: true
+      //   }
+      // },
+      // {
+      //   path: '/dashboard/withdrawal',
+      //   name: 'withdrawal',
+      //   component: Withdrawal,
+      //   meta:{
+      //     requiresAuth: true
+      //   }
+      // },
     ]
   })
   
